@@ -1,0 +1,2163 @@
+!!python/object/apply:collections.OrderedDict
+- - - image_encoder
+    - !!python/object/apply:collections.OrderedDict
+      - - - trunk
+          - !!python/object/apply:collections.OrderedDict
+            - - - patch_embed
+                - !!python/object/apply:collections.OrderedDict
+                  - - - proj
+                      - _target_: torch.nn.Conv2d
+                        in_channels: 3
+                        out_channels: 96
+                        kernel_size: !!python/tuple
+                        - 7
+                        - 7
+                        stride: !!python/tuple
+                        - 4
+                        - 4
+                        padding: !!python/tuple
+                        - 3
+                        - 3
+              - - blocks
+                - !!python/object/apply:collections.OrderedDict
+                  - - - '0'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 96
+                                    out_features: 288
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 96
+                                    out_features: 96
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 96
+                                          out_features: 384
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 96
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '1'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - pool
+                            - _target_: torch.nn.modules.pooling.MaxPool2d
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - q_pool
+                                  - _target_: torch.nn.modules.pooling.MaxPool2d
+                                - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 96
+                                    out_features: 576
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 192
+                                    out_features: 192
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 192
+                                          out_features: 768
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 768
+                                          out_features: 192
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                          - - proj
+                            - _target_: torch.nn.Linear
+                              in_features: 96
+                              out_features: 192
+                              bias: true
+                    - - '2'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 192
+                                    out_features: 576
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 192
+                                    out_features: 192
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 192
+                                          out_features: 768
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 768
+                                          out_features: 192
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '3'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - pool
+                            - _target_: torch.nn.modules.pooling.MaxPool2d
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - q_pool
+                                  - _target_: torch.nn.modules.pooling.MaxPool2d
+                                - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 192
+                                    out_features: 1152
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 384
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 1536
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 1536
+                                          out_features: 384
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                          - - proj
+                            - _target_: torch.nn.Linear
+                              in_features: 192
+                              out_features: 384
+                              bias: true
+                    - - '4'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 1152
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 384
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 1536
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 1536
+                                          out_features: 384
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '5'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 1152
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 384
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 1536
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 1536
+                                          out_features: 384
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '6'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 1152
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 384
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 1536
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 1536
+                                          out_features: 384
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '7'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 1152
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 384
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 1536
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 1536
+                                          out_features: 384
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '8'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 1152
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 384
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 1536
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 1536
+                                          out_features: 384
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '9'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 1152
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 384
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 1536
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 1536
+                                          out_features: 384
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '10'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 1152
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 384
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 1536
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 1536
+                                          out_features: 384
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '11'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 1152
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 384
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 1536
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 1536
+                                          out_features: 384
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '12'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 1152
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 384
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 1536
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 1536
+                                          out_features: 384
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '13'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 1152
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 384
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 384
+                                          out_features: 1536
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 1536
+                                          out_features: 384
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                    - - '14'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - pool
+                            - _target_: torch.nn.modules.pooling.MaxPool2d
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - q_pool
+                                  - _target_: torch.nn.modules.pooling.MaxPool2d
+                                - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 384
+                                    out_features: 2304
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 768
+                                    out_features: 768
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 768
+                                          out_features: 3072
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 3072
+                                          out_features: 768
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+                          - - proj
+                            - _target_: torch.nn.Linear
+                              in_features: 384
+                              out_features: 768
+                              bias: true
+                    - - '15'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - qkv
+                                  - _target_: torch.nn.Linear
+                                    in_features: 768
+                                    out_features: 2304
+                                    bias: true
+                                - - proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 768
+                                    out_features: 768
+                                    bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 768
+                                          out_features: 3072
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 3072
+                                          out_features: 768
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.GELU
+        - - neck
+          - !!python/object/apply:collections.OrderedDict
+            - - - position_encoding
+                - _target_: sam2.modeling.position_encoding.PositionEmbeddingSine
+              - - convs
+                - !!python/object/apply:collections.OrderedDict
+                  - - - '0'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - conv
+                            - _target_: torch.nn.Conv2d
+                              in_channels: 768
+                              out_channels: 256
+                              kernel_size: !!python/tuple
+                              - 1
+                              - 1
+                              stride: !!python/tuple
+                              - 1
+                              - 1
+                              padding: !!python/tuple
+                              - 0
+                              - 0
+                    - - '1'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - conv
+                            - _target_: torch.nn.Conv2d
+                              in_channels: 384
+                              out_channels: 256
+                              kernel_size: !!python/tuple
+                              - 1
+                              - 1
+                              stride: !!python/tuple
+                              - 1
+                              - 1
+                              padding: !!python/tuple
+                              - 0
+                              - 0
+                    - - '2'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - conv
+                            - _target_: torch.nn.Conv2d
+                              in_channels: 192
+                              out_channels: 256
+                              kernel_size: !!python/tuple
+                              - 1
+                              - 1
+                              stride: !!python/tuple
+                              - 1
+                              - 1
+                              padding: !!python/tuple
+                              - 0
+                              - 0
+                    - - '3'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - conv
+                            - _target_: torch.nn.Conv2d
+                              in_channels: 96
+                              out_channels: 256
+                              kernel_size: !!python/tuple
+                              - 1
+                              - 1
+                              stride: !!python/tuple
+                              - 1
+                              - 1
+                              padding: !!python/tuple
+                              - 0
+                              - 0
+  - - mask_downsample
+    - _target_: torch.nn.Conv2d
+      in_channels: 1
+      out_channels: 1
+      kernel_size: !!python/tuple
+      - 4
+      - 4
+      stride: !!python/tuple
+      - 4
+      - 4
+      padding: !!python/tuple
+      - 0
+      - 0
+  - - memory_attention
+    - !!python/object/apply:collections.OrderedDict
+      - - - layers
+          - !!python/object/apply:collections.OrderedDict
+            - - - '0'
+                - !!python/object/apply:collections.OrderedDict
+                  - - - self_attn
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - q_proj
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - base_layer
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 256
+                                    bias: true
+                                - - lora_dropout
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.modules.linear.Identity
+                                - - lora_A
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 8
+                                          bias: false
+                                - - lora_B
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 8
+                                          out_features: 256
+                                          bias: false
+                                - - lora_embedding_A
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_embedding_B
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_magnitude_vector
+                                  - _target_: torch.nn.modules.container.ModuleDict
+                          - - k_proj
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - base_layer
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 256
+                                    bias: true
+                                - - lora_dropout
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.modules.linear.Identity
+                                - - lora_A
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 8
+                                          bias: false
+                                - - lora_B
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 8
+                                          out_features: 256
+                                          bias: false
+                                - - lora_embedding_A
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_embedding_B
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_magnitude_vector
+                                  - _target_: torch.nn.modules.container.ModuleDict
+                          - - v_proj
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - base_layer
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 256
+                                    bias: true
+                                - - lora_dropout
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.modules.linear.Identity
+                                - - lora_A
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 8
+                                          bias: false
+                                - - lora_B
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 8
+                                          out_features: 256
+                                          bias: false
+                                - - lora_embedding_A
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_embedding_B
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_magnitude_vector
+                                  - _target_: torch.nn.modules.container.ModuleDict
+                          - - out_proj
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - base_layer
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 256
+                                    bias: true
+                                - - lora_dropout
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.modules.linear.Identity
+                                - - lora_A
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 8
+                                          bias: false
+                                - - lora_B
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 8
+                                          out_features: 256
+                                          bias: false
+                                - - lora_embedding_A
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_embedding_B
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_magnitude_vector
+                                  - _target_: torch.nn.modules.container.ModuleDict
+                    - - cross_attn_image
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - q_proj
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - base_layer
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 256
+                                    bias: true
+                                - - lora_dropout
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.modules.linear.Identity
+                                - - lora_A
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 8
+                                          bias: false
+                                - - lora_B
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 8
+                                          out_features: 256
+                                          bias: false
+                                - - lora_embedding_A
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_embedding_B
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_magnitude_vector
+                                  - _target_: torch.nn.modules.container.ModuleDict
+                          - - k_proj
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - base_layer
+                                  - _target_: torch.nn.Linear
+                                    in_features: 64
+                                    out_features: 256
+                                    bias: true
+                                - - lora_dropout
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.modules.linear.Identity
+                                - - lora_A
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 64
+                                          out_features: 8
+                                          bias: false
+                                - - lora_B
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 8
+                                          out_features: 256
+                                          bias: false
+                                - - lora_embedding_A
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_embedding_B
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_magnitude_vector
+                                  - _target_: torch.nn.modules.container.ModuleDict
+                          - - v_proj
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - base_layer
+                                  - _target_: torch.nn.Linear
+                                    in_features: 64
+                                    out_features: 256
+                                    bias: true
+                                - - lora_dropout
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.modules.linear.Identity
+                                - - lora_A
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 64
+                                          out_features: 8
+                                          bias: false
+                                - - lora_B
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 8
+                                          out_features: 256
+                                          bias: false
+                                - - lora_embedding_A
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_embedding_B
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_magnitude_vector
+                                  - _target_: torch.nn.modules.container.ModuleDict
+                          - - out_proj
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - base_layer
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 256
+                                    bias: true
+                                - - lora_dropout
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.modules.linear.Identity
+                                - - lora_A
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 8
+                                          bias: false
+                                - - lora_B
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - default
+                                        - _target_: torch.nn.Linear
+                                          in_features: 8
+                                          out_features: 256
+                                          bias: false
+                                - - lora_embedding_A
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_embedding_B
+                                  - _target_: torch.nn.modules.container.ParameterDict
+                                - - lora_magnitude_vector
+                                  - _target_: torch.nn.modules.container.ModuleDict
+                    - - linear1
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 2048
+                        bias: true
+                    - - dropout
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - linear2
+                      - _target_: torch.nn.Linear
+                        in_features: 2048
+                        out_features: 256
+                        bias: true
+                    - - norm1
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - norm2
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - norm3
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - dropout1
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - dropout2
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - dropout3
+                      - _target_: torch.nn.modules.dropout.Dropout
+              - - '1'
+                - !!python/object/apply:collections.OrderedDict
+                  - - - self_attn
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - q_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - k_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - v_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - out_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                    - - cross_attn_image
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - q_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - k_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 64
+                              out_features: 256
+                              bias: true
+                          - - v_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 64
+                              out_features: 256
+                              bias: true
+                          - - out_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                    - - linear1
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 2048
+                        bias: true
+                    - - dropout
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - linear2
+                      - _target_: torch.nn.Linear
+                        in_features: 2048
+                        out_features: 256
+                        bias: true
+                    - - norm1
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - norm2
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - norm3
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - dropout1
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - dropout2
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - dropout3
+                      - _target_: torch.nn.modules.dropout.Dropout
+              - - '2'
+                - !!python/object/apply:collections.OrderedDict
+                  - - - self_attn
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - q_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - k_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - v_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - out_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                    - - cross_attn_image
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - q_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - k_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 64
+                              out_features: 256
+                              bias: true
+                          - - v_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 64
+                              out_features: 256
+                              bias: true
+                          - - out_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                    - - linear1
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 2048
+                        bias: true
+                    - - dropout
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - linear2
+                      - _target_: torch.nn.Linear
+                        in_features: 2048
+                        out_features: 256
+                        bias: true
+                    - - norm1
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - norm2
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - norm3
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - dropout1
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - dropout2
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - dropout3
+                      - _target_: torch.nn.modules.dropout.Dropout
+              - - '3'
+                - !!python/object/apply:collections.OrderedDict
+                  - - - self_attn
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - q_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - k_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - v_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - out_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                    - - cross_attn_image
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - q_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - k_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 64
+                              out_features: 256
+                              bias: true
+                          - - v_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 64
+                              out_features: 256
+                              bias: true
+                          - - out_proj
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                    - - linear1
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 2048
+                        bias: true
+                    - - dropout
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - linear2
+                      - _target_: torch.nn.Linear
+                        in_features: 2048
+                        out_features: 256
+                        bias: true
+                    - - norm1
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - norm2
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - norm3
+                      - _target_: torch.nn.modules.normalization.LayerNorm
+                    - - dropout1
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - dropout2
+                      - _target_: torch.nn.modules.dropout.Dropout
+                    - - dropout3
+                      - _target_: torch.nn.modules.dropout.Dropout
+        - - norm
+          - _target_: torch.nn.modules.normalization.LayerNorm
+  - - memory_encoder
+    - !!python/object/apply:collections.OrderedDict
+      - - - mask_downsampler
+          - !!python/object/apply:collections.OrderedDict
+            - - - encoder
+                - !!python/object/apply:collections.OrderedDict
+                  - - - '0'
+                      - _target_: torch.nn.Conv2d
+                        in_channels: 1
+                        out_channels: 4
+                        kernel_size: !!python/tuple
+                        - 3
+                        - 3
+                        stride: !!python/tuple
+                        - 2
+                        - 2
+                        padding: !!python/tuple
+                        - 1
+                        - 1
+                    - - '1'
+                      - _target_: sam2.modeling.sam2_utils.LayerNorm2d
+                    - - '2'
+                      - _target_: torch.nn.modules.activation.GELU
+                    - - '3'
+                      - _target_: torch.nn.Conv2d
+                        in_channels: 4
+                        out_channels: 16
+                        kernel_size: !!python/tuple
+                        - 3
+                        - 3
+                        stride: !!python/tuple
+                        - 2
+                        - 2
+                        padding: !!python/tuple
+                        - 1
+                        - 1
+                    - - '4'
+                      - _target_: sam2.modeling.sam2_utils.LayerNorm2d
+                    - - '5'
+                      - _target_: torch.nn.modules.activation.GELU
+                    - - '6'
+                      - _target_: torch.nn.Conv2d
+                        in_channels: 16
+                        out_channels: 64
+                        kernel_size: !!python/tuple
+                        - 3
+                        - 3
+                        stride: !!python/tuple
+                        - 2
+                        - 2
+                        padding: !!python/tuple
+                        - 1
+                        - 1
+                    - - '7'
+                      - _target_: sam2.modeling.sam2_utils.LayerNorm2d
+                    - - '8'
+                      - _target_: torch.nn.modules.activation.GELU
+                    - - '9'
+                      - _target_: torch.nn.Conv2d
+                        in_channels: 64
+                        out_channels: 256
+                        kernel_size: !!python/tuple
+                        - 3
+                        - 3
+                        stride: !!python/tuple
+                        - 2
+                        - 2
+                        padding: !!python/tuple
+                        - 1
+                        - 1
+                    - - '10'
+                      - _target_: sam2.modeling.sam2_utils.LayerNorm2d
+                    - - '11'
+                      - _target_: torch.nn.modules.activation.GELU
+                    - - '12'
+                      - _target_: torch.nn.Conv2d
+                        in_channels: 256
+                        out_channels: 256
+                        kernel_size: !!python/tuple
+                        - 1
+                        - 1
+                        stride: !!python/tuple
+                        - 1
+                        - 1
+                        padding: !!python/tuple
+                        - 0
+                        - 0
+        - - pix_feat_proj
+          - _target_: torch.nn.Conv2d
+            in_channels: 256
+            out_channels: 256
+            kernel_size: !!python/tuple
+            - 1
+            - 1
+            stride: !!python/tuple
+            - 1
+            - 1
+            padding: !!python/tuple
+            - 0
+            - 0
+        - - fuser
+          - !!python/object/apply:collections.OrderedDict
+            - - - proj
+                - _target_: torch.nn.modules.linear.Identity
+              - - layers
+                - !!python/object/apply:collections.OrderedDict
+                  - - - '0'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - dwconv
+                            - _target_: torch.nn.Conv2d
+                              in_channels: 256
+                              out_channels: 256
+                              kernel_size: &id001 !!python/tuple
+                              - 7
+                              - 7
+                              stride: &id002 !!python/tuple
+                              - 1
+                              - 1
+                              padding: &id003 !!python/tuple
+                              - 3
+                              - 3
+                          - - norm
+                            - _target_: sam2.modeling.sam2_utils.LayerNorm2d
+                          - - pwconv1
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 1024
+                              bias: true
+                          - - act
+                            - _target_: torch.nn.modules.activation.GELU
+                          - - pwconv2
+                            - _target_: torch.nn.Linear
+                              in_features: 1024
+                              out_features: 256
+                              bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+                    - - '1'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - dwconv
+                            - _target_: torch.nn.Conv2d
+                              in_channels: 256
+                              out_channels: 256
+                              kernel_size: *id001
+                              stride: *id002
+                              padding: *id003
+                          - - norm
+                            - _target_: sam2.modeling.sam2_utils.LayerNorm2d
+                          - - pwconv1
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 1024
+                              bias: true
+                          - - act
+                            - _target_: torch.nn.modules.activation.GELU
+                          - - pwconv2
+                            - _target_: torch.nn.Linear
+                              in_features: 1024
+                              out_features: 256
+                              bias: true
+                          - - drop_path
+                            - _target_: torch.nn.modules.linear.Identity
+        - - position_encoding
+          - _target_: sam2.modeling.position_encoding.PositionEmbeddingSine
+        - - out_proj
+          - _target_: torch.nn.Conv2d
+            in_channels: 256
+            out_channels: 64
+            kernel_size: !!python/tuple
+            - 1
+            - 1
+            stride: !!python/tuple
+            - 1
+            - 1
+            padding: !!python/tuple
+            - 0
+            - 0
+  - - sam_prompt_encoder
+    - !!python/object/apply:collections.OrderedDict
+      - - - pe_layer
+          - _target_: sam2.modeling.position_encoding.PositionEmbeddingRandom
+        - - point_embeddings
+          - !!python/object/apply:collections.OrderedDict
+            - - - '0'
+                - _target_: torch.nn.modules.sparse.Embedding
+              - - '1'
+                - _target_: torch.nn.modules.sparse.Embedding
+              - - '2'
+                - _target_: torch.nn.modules.sparse.Embedding
+              - - '3'
+                - _target_: torch.nn.modules.sparse.Embedding
+        - - not_a_point_embed
+          - _target_: torch.nn.modules.sparse.Embedding
+        - - mask_downscaling
+          - !!python/object/apply:collections.OrderedDict
+            - - - '0'
+                - _target_: torch.nn.Conv2d
+                  in_channels: 1
+                  out_channels: 4
+                  kernel_size: !!python/tuple
+                  - 2
+                  - 2
+                  stride: !!python/tuple
+                  - 2
+                  - 2
+                  padding: !!python/tuple
+                  - 0
+                  - 0
+              - - '1'
+                - _target_: sam2.modeling.sam2_utils.LayerNorm2d
+              - - '2'
+                - _target_: torch.nn.modules.activation.GELU
+              - - '3'
+                - _target_: torch.nn.Conv2d
+                  in_channels: 4
+                  out_channels: 16
+                  kernel_size: !!python/tuple
+                  - 2
+                  - 2
+                  stride: !!python/tuple
+                  - 2
+                  - 2
+                  padding: !!python/tuple
+                  - 0
+                  - 0
+              - - '4'
+                - _target_: sam2.modeling.sam2_utils.LayerNorm2d
+              - - '5'
+                - _target_: torch.nn.modules.activation.GELU
+              - - '6'
+                - _target_: torch.nn.Conv2d
+                  in_channels: 16
+                  out_channels: 256
+                  kernel_size: !!python/tuple
+                  - 1
+                  - 1
+                  stride: !!python/tuple
+                  - 1
+                  - 1
+                  padding: !!python/tuple
+                  - 0
+                  - 0
+        - - no_mask_embed
+          - _target_: torch.nn.modules.sparse.Embedding
+  - - sam_mask_decoder
+    - !!python/object/apply:collections.OrderedDict
+      - - - transformer
+          - !!python/object/apply:collections.OrderedDict
+            - - - layers
+                - !!python/object/apply:collections.OrderedDict
+                  - - - '0'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - self_attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - q_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 256
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 256
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 256
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                                - - k_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 256
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 256
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 256
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                                - - v_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 256
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 256
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 256
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                                - - out_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 256
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 256
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 256
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                          - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - cross_attn_token_to_image
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - q_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 128
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 256
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 128
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                                - - k_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 128
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 256
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 128
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                                - - v_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 128
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 256
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 128
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                                - - out_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 128
+                                          out_features: 256
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 128
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 256
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 2048
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 2048
+                                          out_features: 256
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.ReLU
+                          - - norm3
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - norm4
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - cross_attn_image_to_token
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - q_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 128
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 256
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 128
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                                - - k_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 128
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 256
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 128
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                                - - v_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 128
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 256
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 128
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                                - - out_proj
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - base_layer
+                                        - _target_: torch.nn.Linear
+                                          in_features: 128
+                                          out_features: 256
+                                          bias: true
+                                      - - lora_dropout
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.modules.linear.Identity
+                                      - - lora_A
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 128
+                                                out_features: 8
+                                                bias: false
+                                      - - lora_B
+                                        - !!python/object/apply:collections.OrderedDict
+                                          - - - default
+                                              - _target_: torch.nn.Linear
+                                                in_features: 8
+                                                out_features: 256
+                                                bias: false
+                                      - - lora_embedding_A
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_embedding_B
+                                        - _target_: torch.nn.modules.container.ParameterDict
+                                      - - lora_magnitude_vector
+                                        - _target_: torch.nn.modules.container.ModuleDict
+                    - - '1'
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - self_attn
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - q_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 256
+                                    bias: true
+                                - - k_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 256
+                                    bias: true
+                                - - v_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 256
+                                    bias: true
+                                - - out_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 256
+                                    bias: true
+                          - - norm1
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - cross_attn_token_to_image
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - q_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 128
+                                    bias: true
+                                - - k_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 128
+                                    bias: true
+                                - - v_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 128
+                                    bias: true
+                                - - out_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 128
+                                    out_features: 256
+                                    bias: true
+                          - - norm2
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - mlp
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - layers
+                                  - !!python/object/apply:collections.OrderedDict
+                                    - - - '0'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 256
+                                          out_features: 2048
+                                          bias: true
+                                      - - '1'
+                                        - _target_: torch.nn.Linear
+                                          in_features: 2048
+                                          out_features: 256
+                                          bias: true
+                                - - act
+                                  - _target_: torch.nn.modules.activation.ReLU
+                          - - norm3
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - norm4
+                            - _target_: torch.nn.modules.normalization.LayerNorm
+                          - - cross_attn_image_to_token
+                            - !!python/object/apply:collections.OrderedDict
+                              - - - q_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 128
+                                    bias: true
+                                - - k_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 128
+                                    bias: true
+                                - - v_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 256
+                                    out_features: 128
+                                    bias: true
+                                - - out_proj
+                                  - _target_: torch.nn.Linear
+                                    in_features: 128
+                                    out_features: 256
+                                    bias: true
+              - - final_attn_token_to_image
+                - !!python/object/apply:collections.OrderedDict
+                  - - - q_proj
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 128
+                        bias: true
+                    - - k_proj
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 128
+                        bias: true
+                    - - v_proj
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 128
+                        bias: true
+                    - - out_proj
+                      - _target_: torch.nn.Linear
+                        in_features: 128
+                        out_features: 256
+                        bias: true
+              - - norm_final_attn
+                - _target_: torch.nn.modules.normalization.LayerNorm
+        - - iou_token
+          - _target_: torch.nn.modules.sparse.Embedding
+        - - mask_tokens
+          - _target_: torch.nn.modules.sparse.Embedding
+        - - obj_score_token
+          - _target_: torch.nn.modules.sparse.Embedding
+        - - output_upscaling
+          - !!python/object/apply:collections.OrderedDict
+            - - - '0'
+                - _target_: torch.nn.modules.conv.ConvTranspose2d
+              - - '1'
+                - _target_: sam2.modeling.sam2_utils.LayerNorm2d
+              - - '2'
+                - _target_: torch.nn.modules.activation.GELU
+              - - '3'
+                - _target_: torch.nn.modules.conv.ConvTranspose2d
+              - - '4'
+                - _target_: torch.nn.modules.activation.GELU
+        - - conv_s0
+          - _target_: torch.nn.Conv2d
+            in_channels: 256
+            out_channels: 32
+            kernel_size: !!python/tuple
+            - 1
+            - 1
+            stride: !!python/tuple
+            - 1
+            - 1
+            padding: !!python/tuple
+            - 0
+            - 0
+        - - conv_s1
+          - _target_: torch.nn.Conv2d
+            in_channels: 256
+            out_channels: 64
+            kernel_size: !!python/tuple
+            - 1
+            - 1
+            stride: !!python/tuple
+            - 1
+            - 1
+            padding: !!python/tuple
+            - 0
+            - 0
+        - - output_hypernetworks_mlps
+          - !!python/object/apply:collections.OrderedDict
+            - - - '0'
+                - !!python/object/apply:collections.OrderedDict
+                  - - - layers
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - '0'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - '1'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - '2'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 32
+                              bias: true
+                    - - act
+                      - _target_: torch.nn.modules.activation.ReLU
+              - - '1'
+                - !!python/object/apply:collections.OrderedDict
+                  - - - layers
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - '0'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - '1'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - '2'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 32
+                              bias: true
+                    - - act
+                      - _target_: torch.nn.modules.activation.ReLU
+              - - '2'
+                - !!python/object/apply:collections.OrderedDict
+                  - - - layers
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - '0'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - '1'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - '2'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 32
+                              bias: true
+                    - - act
+                      - _target_: torch.nn.modules.activation.ReLU
+              - - '3'
+                - !!python/object/apply:collections.OrderedDict
+                  - - - layers
+                      - !!python/object/apply:collections.OrderedDict
+                        - - - '0'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - '1'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 256
+                              bias: true
+                          - - '2'
+                            - _target_: torch.nn.Linear
+                              in_features: 256
+                              out_features: 32
+                              bias: true
+                    - - act
+                      - _target_: torch.nn.modules.activation.ReLU
+        - - iou_prediction_head
+          - !!python/object/apply:collections.OrderedDict
+            - - - layers
+                - !!python/object/apply:collections.OrderedDict
+                  - - - '0'
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 256
+                        bias: true
+                    - - '1'
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 256
+                        bias: true
+                    - - '2'
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 4
+                        bias: true
+              - - act
+                - _target_: torch.nn.modules.activation.ReLU
+        - - pred_obj_score_head
+          - !!python/object/apply:collections.OrderedDict
+            - - - layers
+                - !!python/object/apply:collections.OrderedDict
+                  - - - '0'
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 256
+                        bias: true
+                    - - '1'
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 256
+                        bias: true
+                    - - '2'
+                      - _target_: torch.nn.Linear
+                        in_features: 256
+                        out_features: 1
+                        bias: true
+              - - act
+                - _target_: torch.nn.modules.activation.ReLU
+  - - obj_ptr_proj
+    - !!python/object/apply:collections.OrderedDict
+      - - - layers
+          - !!python/object/apply:collections.OrderedDict
+            - - - '0'
+                - _target_: torch.nn.Linear
+                  in_features: 256
+                  out_features: 256
+                  bias: true
+              - - '1'
+                - _target_: torch.nn.Linear
+                  in_features: 256
+                  out_features: 256
+                  bias: true
+              - - '2'
+                - _target_: torch.nn.Linear
+                  in_features: 256
+                  out_features: 256
+                  bias: true
+        - - act
+          - _target_: torch.nn.modules.activation.ReLU
+  - - obj_ptr_tpos_proj
+    - _target_: torch.nn.modules.linear.Identity

@@ -1,0 +1,11 @@
+nohup: ignoring input
+/raid/home/baraa.abdelsamad/SAM2-ChannelBased/fine-tune-train_segment_anything_2_in_60_lines_of_code-main/sam2/modeling/sam/transformer.py:22: UserWarning: Flash Attention is disabled as it requires a GPU with Ampere (8.0) CUDA capability.
+  OLD_GPU, USE_FLASH_ATTN, MATH_KERNEL_ON = get_sdpa_settings()
+[0 2]
+[0 1]
+ann shape(1024, 1024, 3)
+Traceback (most recent call last):
+  File "/raid/home/baraa.abdelsamad/SAM2-ChannelBased/fine-tune-train_segment_anything_2_in_60_lines_of_code-main/TEST_bbox.py", line 150, in <module>
+    prd_mask = torch.sigmoid(prd_masks[:, 0])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sigmoid(): argument 'input' (position 1) must be Tensor, not numpy.ndarray

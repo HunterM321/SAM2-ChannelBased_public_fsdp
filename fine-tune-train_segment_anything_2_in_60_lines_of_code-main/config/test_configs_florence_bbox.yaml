@@ -1,0 +1,11 @@
+test_results_dir: "test-results"  # Directory to save test results
+chamber: "LV"  # Chamber type: "LV", "LA", "RA", etc.
+csv_file_dir: "data/{}_test.csv"  # Path to the test CSV file
+test_data_dir: "/home/hunter.ma/CAMUS-processesd"  # Directory containing test images and masks
+sam2_checkpoint: "/home/baraa.abdelsamad/SAM2-ChannelBased/ckpts/sam2_hiera_small.pt"  # Path to the SAM2 model checkpoint
+model_cfg: "sam2_hiera_s.yaml"  # Path to the model configuration file
+lora_checkpoint: "/home/hunter.ma/SAM2-ChannelBased_public/ft_bbox_model.torch"  # Path to the LoRA checkpoint
+use_whole_image: false  # If true, use the whole image for bounding box; otherwise, use Florence-2 for object detection
+florence_ckpt: "/raid/home/hunter.ma/florence_finetuning_echo/Florence-2-Fine-tuning-main/Florence-2-Fine-tuning-main/{}_model_checkpoints/epoch_10"  # Path to the Florence-2 model checkpoint
+sample_size: 200  # Number of samples to evaluate
+random_state: 42  # Seed for reproducibility

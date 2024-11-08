@@ -1,0 +1,5 @@
+Mean Precision: 0.6328
+Mean Recall: 0.6773
+Mean Accuracy: 0.9669
+Mean Dice: 0.8148
+Mean IoU: 0.5786

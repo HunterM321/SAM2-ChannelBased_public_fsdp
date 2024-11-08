@@ -1,0 +1,11 @@
+LA-10-test-samples:
+Mean IoU: 0.8765458632681853
+Mean Dice: 0.9329857783240284
+
+LV-10-test-samples:
+Mean IoU: 0.9228085066923972
+Mean Dice: 0.9597990746979669
+
+RA-10-test-samples:
+Mean IoU: 0.887766271747528
+Mean Dice: 0.9402944209258086

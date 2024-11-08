@@ -1,0 +1,16 @@
+prev_results/test-results-correct-bbox/model.torch
+
+prev_results/output_whole_image.log
+
+ft_bbox_model.torch
+
+prev_results/output.log
+
+ckpts/sam2_hiera_small.pt
+
+ft_whole_image_model.torch
+
+prev_results/test-results-whole-image/model.torch
+
+important_files/sam2_hiera_small.pt
+

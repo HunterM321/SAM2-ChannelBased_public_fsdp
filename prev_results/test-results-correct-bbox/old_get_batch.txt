@@ -1,0 +1,13 @@
+   for ind in inds:
+        mask = (mat_map == ind).astype(np.uint8) # make binary mask corresponding to index ind
+        masks.append(mask)
+        coords = np.argwhere(mask > 0) # get all coordinates in mask
+        yx = np.array(coords[np.random.randint(len(coords))]) # choose random point/coordinate
+        points.append([[yx[1], yx[0]]])
+        
+        # Calculate bounding box
+        y_min, x_min = coords.min(axis=0)
+        y_max, x_max = coords.max(axis=0)
+        bbox = [x_min, y_min, x_max, y_max]  # [x_min, y_min, x_max, y_max]
+        bboxes.append(bbox)
+    

@@ -1,0 +1,65 @@
+nohup: ignoring input
+/raid/home/baraa.abdelsamad/SAM2-ChannelBased/fine-tune-train_segment_anything_2_in_60_lines_of_code-main/sam2/modeling/sam/transformer.py:22: UserWarning: Flash Attention is disabled as it requires a GPU with Ampere (8.0) CUDA capability.
+  OLD_GPU, USE_FLASH_ATTN, MATH_KERNEL_ON = get_sdpa_settings()
+is there a mask: [0]
+mask shape (256, 256)
+got bbox: [0, 0, 256, 256]
+mask after binarizing: [0 1]
+shape of pred mask: (3, 256, 256)
+pred mask unique is: [0 1]
+is there a mask: [0]
+mask shape (256, 256)
+got bbox: [0, 0, 256, 256]
+mask after binarizing: [0 1]
+shape of pred mask: (3, 256, 256)
+pred mask unique is: [0 1]
+is there a mask: [0]
+mask shape (256, 256)
+got bbox: [0, 0, 256, 256]
+mask after binarizing: [0 1]
+shape of pred mask: (3, 256, 256)
+pred mask unique is: [0 1]
+is there a mask: [0]
+mask shape (256, 256)
+got bbox: [0, 0, 256, 256]
+mask after binarizing: [0 1]
+shape of pred mask: (3, 256, 256)
+pred mask unique is: [0 1]
+is there a mask: [0]
+mask shape (256, 256)
+got bbox: [0, 0, 256, 256]
+mask after binarizing: [0 1]
+shape of pred mask: (3, 256, 256)
+pred mask unique is: [0 1]
+is there a mask: [0]
+mask shape (256, 256)
+got bbox: [0, 0, 256, 256]
+mask after binarizing: [0 1]
+shape of pred mask: (3, 256, 256)
+pred mask unique is: [0 1]
+is there a mask: [0]
+mask shape (256, 256)
+got bbox: [0, 0, 256, 256]
+mask after binarizing: [0 1]
+shape of pred mask: (3, 256, 256)
+pred mask unique is: [0 1]
+is there a mask: [0]
+mask shape (256, 256)
+got bbox: [0, 0, 256, 256]
+mask after binarizing: [0 1]
+shape of pred mask: (3, 256, 256)
+pred mask unique is: [0 1]
+is there a mask: [0]
+mask shape (256, 256)
+got bbox: [0, 0, 256, 256]
+mask after binarizing: [0 1]
+shape of pred mask: (3, 256, 256)
+pred mask unique is: [0 1]
+is there a mask: [0]
+mask shape (256, 256)
+got bbox: [0, 0, 256, 256]
+mask after binarizing: [0 1]
+shape of pred mask: (3, 256, 256)
+pred mask unique is: [0 1]
+Mean IoU: 0.4436254424470598
+Mean Dice: 0.6015001524979616
